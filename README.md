@@ -9,6 +9,7 @@
 - User-friendly interface for selecting IFC files.
 - Option to specify a save location for the Excel file.
 - Ability to choose and extract specific categories of data from the IFC file.
+- addition of GUID extraction
 - Automated creation of Excel sheets with extracted data.
 - Customized Excel output with styled headers and adjusted column widths.
 
@@ -55,4 +56,4 @@ Contributions are welcome! Please submit a pull request or open an issue to repo
 
 ## Contact
 
-For any questions or feedback, please reach out to [chiaraderosa.arch@gmail.com](mailto:chiaraderosa.arch@gmail.com).
+For any questions or feedback, please reach out to robtron88 AT tiscali DOT it.
