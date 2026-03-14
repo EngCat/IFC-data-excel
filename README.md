@@ -2,14 +2,26 @@
 
 ## Description
 
-**IFC DataToExcel** is a Python application designed to facilitate the extraction of data from IFC files and its conversion into Excel format. This tool provides an intuitive graphical user interface for selecting IFC files, specifying categories of data to extract, and determining the location for saving the resulting Excel file. It leverages the `ifcopenshell` library for reading IFC files and uses `pandas` and `openpyxl` for generating and customizing the Excel output.
+**IFC DataToExcel** is a Python application designed to facilitate the extraction
+of data from IFC files and its conversion into Excel format.
+
+This repository is an extended fork of the original
+[chiaradero/IFC-data-excel](https://github.com/chiaradero/IFC-data-excel),
+created to support practical BIM workflows where **unambiguous identification
+of IFC elements** is required.
+
+The tool provides an intuitive graphical user interface for selecting IFC files,
+specifying categories of data to extract, and determining the location for
+saving the resulting Excel file. It leverages the `ifcopenshell` library for
+reading IFC files and uses `pandas` and `openpyxl` for generating and
+customizing the Excel output.
 
 ## Features
 
 - User-friendly interface for selecting IFC files.
 - Option to specify a save location for the Excel file.
 - Ability to choose and extract specific categories of data from the IFC file.
-- addition of GUID extraction
+- **Extraction of IFC GlobalId (GUID) for each object**.
 - Automated creation of Excel sheets with extracted data.
 - Customized Excel output with styled headers and adjusted column widths.
 
@@ -39,14 +51,31 @@
     - Click **"Browse IFC File"** to select an IFC file from your filesystem.
     - Click **"Browse Excel File"** to choose a location and name for the output Excel file.
     - Select the categories you wish to extract from the listbox.
-    - Click **"Select All Categories"** to select all available categories, or **"Deselect All Categories"** to clear your selection.
+    - Click **"Select All Categories"** to select all available categories,
+      or **"Deselect All Categories"** to clear your selection.
     - Click **"Extract"** to start the extraction process.
+
+3. After extraction, the data will be saved to the specified Excel file, and a
+   confirmation message will be displayed.
 
 3. After extraction, the data will be saved to the specified Excel file, and a confirmation message will be displayed.
 
+## Output structure
+
+Each Excel worksheet contains one IFC category and includes:
+
+- `GUID` – IFC GlobalId (unique identifier)
+- `Category`
+- `Name`
+- IFC Property Set parameters (`PSetName - PropertyName`)
+
+This structure enables reliable cross-referencing between IFC models, Excel
+exports, and external data sources.
+
 ## Customization
 
-- The Excel file's appearance is customized with a green background for column headers and auto-adjusted column widths.
+- The Excel file's appearance is customized with a green background for column
+  headers and auto-adjusted column widths.
 
 
 ## Contributing
@@ -56,4 +85,4 @@ Contributions are welcome! Please submit a pull request or open an issue to repo
 
 ## Contact
 
-For any questions or feedback, please reach out to robtron88 AT tiscali DOT it.
+For any questions or feedback, please reach out to robtron88 [at] tiscali [dot] it
